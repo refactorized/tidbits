@@ -1,5 +1,5 @@
 const path = require('path')
-const reload = require('require-reload')//(require)
+const reload = require('require-reload')
 const watch = require('node-watch')
 const replhist = require('repl.history')
 
@@ -31,4 +31,4 @@ process.env.NODE_REPL_HISTORY = './'
 global.repl = require('repl').start({useGlobal: true})
 
 // also enable history, which doesn't work by default programmatically
-replhist(repl, path.join(__dirname, '.repl_history'))
+replhist(global.repl, path.join(__dirname, '.repl_history'))
